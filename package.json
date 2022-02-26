@@ -1,0 +1,44 @@
+{
+  "name": "project_tpl",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "@types/lodash-es": "*",
+    "@types/node": "^17.0.21",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "axios": "^0.26.0",
+    "element-plus": "^2.0.2",
+    "eslint": "^8.9.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "nprogress": "^0.2.0",
+    "path": "^0.12.7",
+    "prettier": "^2.5.1",
+    "rollup": "^2.50.0",
+    "unplugin-auto-import": "^0.6.1",
+    "unplugin-vue-components": "^0.17.19",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue": "^3.2.25",
+    "vue-i18n": "^9.1.9",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "install": "^0.13.0",
+    "npm": "^8.5.2",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-visualizer": "^5.5.4",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vue-tsc": "^0.29.8"
+  }
+}
