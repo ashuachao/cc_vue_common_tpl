@@ -23,6 +23,8 @@ import { reactive, toRefs } from "vue";
 import api from "@/helpers/api";
 import useI18n from "@/helpers/hooks/useI18n";
 import * as typeOfApp from "tsType/type.common.td";
+import router from "@/routers";
+
 const { generateTitle } = useI18n();
 // 定义页面需要的响应式数据流
 let state = reactive({

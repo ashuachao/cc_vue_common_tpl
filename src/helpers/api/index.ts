@@ -2,7 +2,7 @@
  * @Author: cc123456
  * @Date: 2022-02-24 00:01:41
  * @Last Modified by: cc123456
- * @Last Modified time: 2022-02-26 14:35:53
+ * @Last Modified time: 2022-02-26 23:39:31
  */
 // api.[ContentType].[method](option)
 const enum ContentType {
@@ -10,9 +10,9 @@ const enum ContentType {
     BgImage, //背景图
     List, //列表内容
 }
-import http from "../utils/http";
-import * as CONSTANT from "../constants/constant.baseUrl";
-import * as typeOfApp from "../../../typings/type.common.td";
+import http from "@/helpers/utils/http";
+import CONSTANT from "@/helpers/constant/constant.baseUrl";
+import * as typeOfApp from "tsType/type.common.td";
 
 // 以组件最小化颗粒为维度展开、里面包含业务、公共资源，这样在每个业务块里可以包含业务资源和公共资源，尽可能做到扩展性和复用性的平衡
 export default {

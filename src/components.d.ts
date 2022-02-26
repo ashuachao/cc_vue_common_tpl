@@ -4,14 +4,19 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    About: typeof import('./views/About/index.vue')['default']
     Chart: typeof import('./components/Chart/chart.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    Index: typeof import('./views/Index/Index.vue')['default']
+    Home: typeof import('./views/Home/index.vue')['default']
+    Inde: typeof import('./views/Inde/index.vue')['default']
+    Index: typeof import('./views/Index/index.vue')['default']
+    Index1: typeof import('./views/Index1/index.vue')['default']
     'List.classic': typeof import('./components/List/list.classic.vue')['default']
     'List.virtual': typeof import('./components/List/list.virtual.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/SvgIcon.vue')['default']
     Swiper: typeof import('./views/Index/components/Swiper.vue')['default']
     Table: typeof import('./components/Table/table.vue')['default']
+    Tpl: typeof import('./views/Tpl/index.vue')['default']
+    Undefined: typeof import('./views/index.vue')['default']
   }
 }
 
