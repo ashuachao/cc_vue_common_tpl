@@ -4,6 +4,7 @@ let CONSTANT_PROD = {};
 let CONSTANT_COMMON = {
     IMG_DATA_URL: "/",
     LANG: "zh",
+    NEED_ANIMATION: false,
 };
 export default Object.assign(
     CONSTANT_COMMON,

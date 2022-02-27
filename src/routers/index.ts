@@ -1,10 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
+import Layout from "@/views/Layout/index";
 const routes: RouteRecordRaw[] = [
     {
         path: "/",
         name: "Index",
-        component: () => import("@/views/Index"), // 注意这里要带上 文件后缀.vue
+        component: Layout,
+        redirect: "/home",
+        children: [
+            {
+                path: "/home",
+                name: "Home",
+                component: () => import("@/views/Home/index.vue"),
+            },
+        ],
     },
 ];
 
