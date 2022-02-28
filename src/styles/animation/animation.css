@@ -1,0 +1,8 @@
+/* 进出场动画 */
+.shine-enter-active,
+.shine-leave-active {
+    transition: opacity 0.2s;
+}
+.shine-enter, .shine-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}

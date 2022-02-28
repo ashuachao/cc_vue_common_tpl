@@ -7,9 +7,10 @@ html,
 body {
   width: 100%;
   height: 100%;
+  font-family: PingFangSC, PingFangSC-Regular, Lantinghei SC, Helvetica Neue,
+    Helvetica, Arial, Microsoft YaHei;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -17,6 +18,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 0.6rem;
 }
 </style>
 <script setup lang="ts">

@@ -4,7 +4,6 @@ const path = require("path");
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 // bundle analyzer
 import visualizer from "rollup-plugin-visualizer";
@@ -39,7 +38,7 @@ export default defineConfig({
             // 配置需要将哪些后缀类型的文件进行自动按需引入
             extensions: ["vue", "md"],
             // 解析的 UI 组件库，这里以 Element Plus 和 Ant Design Vue 为例
-            resolvers: [ElementPlusResolver(), AntDesignVueResolver()],
+            resolvers: [ElementPlusResolver()],
             dts: "./src/components.d.ts",
         }),
         createSvgIconsPlugin({

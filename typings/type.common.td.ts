@@ -17,3 +17,14 @@ export interface List<T> {
     res: Array<T>;
     len: number;
 }
+// navbar types
+export interface NavOptionType {
+    navItems: Array<NavbarItem>;
+    type?: string;
+    logo?: string;
+}
+export interface NavbarItem {
+    name: string;
+    label: string;
+    children: Array<NavbarItem>;
+}
