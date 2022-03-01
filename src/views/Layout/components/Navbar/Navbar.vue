@@ -47,8 +47,10 @@ interface Props {
   navOption: types.NavOptionType;
 }
 let { navOption } = withDefaults(defineProps<Props>(), {});
+console.log(useRoute().name);
+
 let activeNav = computed(() => {
-  return navOption?.navItems?.[0].name;
+  return useRoute().name;
 });
 let handleSelect = (index: any) => {
   console.log(index);

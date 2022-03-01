@@ -4,9 +4,10 @@ let CONSTANT_PROD = {};
 let CONSTANT_COMMON = {
     IMG_DATA_URL: "/",
     LANG: "zh",
-    NEED_ANIMATION: false,
+    NEED_ANIMATION: true,
     LOGO_URL:
         "http://shared.ydstatic.com/ead/dynamic/dynamic-template/image/ow_adimg1/logo.png",
+    ICP: "©2019 北京网易有道计算机系统有限公司 京ICP证080268号",
 };
 export default Object.assign(
     CONSTANT_COMMON,

@@ -28,3 +28,12 @@ export interface NavbarItem {
     label: string;
     children: Array<NavbarItem>;
 }
+// foot types
+export interface FootOptionType {
+    icp: string;
+    footItems: Array<FootItem>;
+}
+export interface FootItem {
+    name: string;
+    link: string;
+}

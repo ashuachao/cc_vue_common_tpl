@@ -1,8 +1,8 @@
 <template>
   <Navbar class="navbar" :navOption="navOption"></Navbar>
   <AppMain></AppMain>
-  <Foot class="foot"></Foot>
-  <Introduce class="intro"></Introduce>
+  <Foot class="foot" :footOption="footOption"></Foot>
+  <!-- <Introduce class="intro"></Introduce> -->
 </template>
 
 <script setup lang="ts">
@@ -14,7 +14,7 @@ import useI18n from "@/helpers/hooks/useI18n";
 const { generateTitle } = useI18n();
 let state = reactive({
   navOption: {} as types.NavOptionType,
-  footOption: {},
+  footOption: {} as types.FootOptionType,
 });
 
 //defined the navoption
@@ -26,8 +26,13 @@ state.navOption.navItems = parseRouteIntoData(
   }
 ).filter((i) => i.name == "Layout")?.[0].children;
 // defined the foot option
-
-let { navOption } = toRefs(state);
+state.footOption.icp = constant.ICP;
+state.footOption.footItems = [
+  { name: "网易有道", link: "www.baidu.com" },
+  { name: "网易游戏", link: "www.baidu.com" },
+  { name: "网易在线", link: "www.baidu.com" },
+];
+let { navOption, footOption } = toRefs(state);
 </script>
 
 <style scoped>

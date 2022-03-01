@@ -19,6 +19,7 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 0.6rem;
+  min-width: 1280px;
 }
 </style>
 <script setup lang="ts">
