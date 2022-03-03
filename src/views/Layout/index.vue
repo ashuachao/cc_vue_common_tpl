@@ -8,20 +8,19 @@
 <script setup lang="ts">
 import parseRouteIntoData from "@/helpers/utils/parseRouteIntoData";
 import routeSetting from "@/routers/route.setting";
-import * as types from "tsType/type.common.td";
 import constant from "@/helpers/constant/constant.baseUrl";
 import useI18n from "@/helpers/hooks/useI18n";
 const { generateTitle } = useI18n();
 let state = reactive({
-  navOption: {} as types.NavOptionType,
-  footOption: {} as types.FootOptionType,
+  navOption: {} as LayoutType.NavOptionType,
+  footOption: {} as LayoutType.FootOptionType,
 });
 
 //defined the navoption
 state.navOption.logo = constant.LOGO_URL;
 state.navOption.navItems = parseRouteIntoData(
   routeSetting,
-  (item: types.NavbarItem) => {
+  (item: LayoutType.NavbarItem) => {
     item.label = generateTitle(`navbar.${item.name}`);
   }
 ).filter((i) => i.name == "Layout")?.[0].children;

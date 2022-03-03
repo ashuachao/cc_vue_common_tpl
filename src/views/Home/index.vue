@@ -18,13 +18,12 @@
 <script setup lang="ts">
 import { reactive, toRefs } from "vue";
 import api from "@/helpers/api";
-import * as types from "tsType/type.common.td";
 import useI18n from "@/helpers/hooks/useI18n";
 const { generateTitle } = useI18n();
 // 定义页面需要的响应式数据流
 let state = reactive({
-  imageList: {} as types.ImageList,
-  bannerList: [] as Array<types.BannerListItem>,
+  imageList: {} as LayoutType.ImageList,
+  bannerList: [] as Array<LayoutType.BannerListItem>,
 });
 let comName = "index";
 // 初始化响应式imglist && 获取当前页面的背景图列表

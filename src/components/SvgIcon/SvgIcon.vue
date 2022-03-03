@@ -15,35 +15,21 @@
   vertical-align: -2px;
 }
 </style>
-<script>
+<script setup lang="ts">
 import { computed, defineComponent } from "vue";
-export default defineComponent({
-  props: {
-    name: {
-      type: String,
-      require: true,
-    },
-    className: {
-      type: String,
-      default: "",
-    },
-    color: {
-      type: String,
-      default: "#333",
-    },
-  },
-  setup(props) {
-    return {
-      symbolId: computed(() => {
-        return `#icon-${props.name}`;
-      }),
-      svgClass: computed(() => {
-        if (props.className) {
-          return `svg-icon ${props.className}`;
-        }
-        return "svg-icon";
-      }),
-    };
-  },
+interface Props {
+  name: string;
+  className: string;
+  color: string;
+}
+let { name, className, color } = withDefaults(defineProps<Props>(), {});
+let symbolId = computed(() => {
+  return `#icon-${name}`;
+});
+let svgClass = computed(() => {
+  if (className) {
+    return `svg-icon ${className}`;
+  }
+  return "svg-icon";
 });
 </script>

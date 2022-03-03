@@ -6,10 +6,16 @@ declare module 'vue' {
   export interface GlobalComponents {
     About: typeof import('./views/About/index.vue')['default']
     AppMain: typeof import('./views/Layout/components/AppMain/AppMain.vue')['default']
+    Card: typeof import("./components/Card/card.vue")["default"];
+    Card_custom: typeof import('./components/Card/card_custom.vue')['default']
+    Card_News: typeof import('./components/Card/card_News.vue')['default']
+    CardCustom: typeof import("./components/Card/cardCustom.vue")["default"];
     Chart: typeof import('./components/Chart/chart.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElOption: typeof import('element-plus/es')['ElOption']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Expert: typeof import('./views/Expert/index.vue')['default']
     Foot: typeof import('./views/Layout/components/Foot/Foot.vue')['default']
@@ -19,6 +25,8 @@ declare module 'vue' {
     'List.classic': typeof import('./components/List/list.classic.vue')['default']
     'List.virtual': typeof import('./components/List/list.virtual.vue')['default']
     Navbar: typeof import('./views/Layout/components/Navbar/Navbar.vue')['default']
+    Option: typeof import('./components/Select/option.vue')['default']
+    Select: typeof import('./components/Select/select.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/svgIcon.vue')['default']
     Swiper: typeof import('./components/Swiper/swiper.vue')['default']
     Table: typeof import('./components/Table/table.vue')['default']

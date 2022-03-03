@@ -1,4 +1,3 @@
-import * as types from "tsType/type.common.td";
 import { RouteRecordRaw } from "vue-router";
 
 /*
@@ -9,14 +8,14 @@ import { RouteRecordRaw } from "vue-router";
  */
 let parseRouteIntoData = (
     routeArr: Array<RouteRecordRaw>,
-    fn: (i: types.NavbarItem) => void
-): Array<types.NavbarItem> => {
-    let result = [] as Array<types.NavbarItem>;
+    fn: (i: LayoutType.NavbarItem) => void
+): Array<LayoutType.NavbarItem> => {
+    let result = [] as Array<LayoutType.NavbarItem>;
     if (routeArr.length == 0) return result;
     for (let i = 0; i < routeArr.length; i++) {
         let navObj = {
             name: String(routeArr[i]?.name),
-        } as types.NavbarItem;
+        } as LayoutType.NavbarItem;
         fn(navObj);
         if (routeArr[i].children?.length) {
             navObj.children = parseRouteIntoData(

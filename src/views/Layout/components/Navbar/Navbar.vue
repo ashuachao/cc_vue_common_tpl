@@ -42,9 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import * as types from "tsType/type.common.td";
 interface Props {
-  navOption: types.NavOptionType;
+  navOption: LayoutType.NavOptionType;
 }
 let { navOption } = withDefaults(defineProps<Props>(), {});
 console.log(useRoute().name);

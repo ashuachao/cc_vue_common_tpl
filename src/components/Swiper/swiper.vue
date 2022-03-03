@@ -35,14 +35,13 @@
 </template>
 
 <script setup lang="ts">
-import * as types from "tsType/type.component.td";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 interface Props {
-  swiperOption: types.swiperOptionType;
+  swiperOption: ComponentType.swiperOptionType;
 }
 let { swiperOption } = withDefaults(defineProps<Props>(), {});
 let modules = [Pagination, Autoplay];

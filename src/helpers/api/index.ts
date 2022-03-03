@@ -12,14 +12,13 @@ const enum ContentType {
 }
 import http from "@/helpers/utils/http";
 import CONSTANT from "@/helpers/constant/constant.baseUrl";
-import * as types from "tsType/type.common.td";
 import routeData from "@/routers/route.setting";
 import parseRouteMethod from "@/helpers/utils/parseRouteIntoData";
 // 以组件最小化颗粒为维度展开、里面包含业务、公共资源，这样在每个业务块里可以包含业务资源和公共资源，尽可能做到扩展性和复用性的平衡
 export default {
     getImage: (pageName: string) =>
         // http.get<types.ImageList>(`${CONSTANT.IMG_DATA_URL}/${pageName}`),
-        Promise.resolve().then((): types.ImageList => {
+        Promise.resolve().then((): LayoutType.ImageList => {
             return {
                 bannerImg: "aaa.jpg",
                 bgImg: "背景大图",
@@ -28,7 +27,7 @@ export default {
         }),
     getBannerList: (pageName: string) =>
         // (pageName: string) => http.get<List<bannerListItem>>(`${pageName}`),
-        Promise.resolve().then((): Array<types.BannerListItem> => {
+        Promise.resolve().then((): Array<LayoutType.BannerListItem> => {
             return [
                 {
                     title: "title.jpg",

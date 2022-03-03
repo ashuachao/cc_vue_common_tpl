@@ -19,9 +19,8 @@
 </template>
 
 <script lang="ts" setup>
-import * as types from "tsType/type.common.td";
 interface Props {
-  footOption: types.FootOptionType;
+  footOption: LayoutType.FootOptionType;
 }
 let { footOption } = withDefaults(defineProps<Props>(), {});
 </script>
