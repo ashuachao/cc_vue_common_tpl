@@ -1,12 +1,12 @@
 <template>
   <div class="containerWrapper">
-    <Swiper :swiperOption="swiperOption" />
+    <Banner :banner-option="bannerOption" />
   </div>
 </template>
 
 <script setup lang="ts">
 import useData from "./hooks.data";
-let { swiperOption } = useData();
+let { bannerOption } = useData();
 </script>
 
 <style scoped>

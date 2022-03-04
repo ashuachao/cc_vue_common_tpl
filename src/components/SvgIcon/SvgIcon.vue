@@ -16,13 +16,15 @@
 }
 </style>
 <script setup lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed } from "vue";
 interface Props {
   name: string;
   className: string;
   color: string;
 }
-let { name, className, color } = withDefaults(defineProps<Props>(), {});
+let { name, className, color } = withDefaults(defineProps<Props>(), {
+  className: "",
+});
 let symbolId = computed(() => {
   return `#icon-${name}`;
 });

@@ -1,5 +1,6 @@
 <template>
   <Navbar class="navbar" :navOption="navOption"></Navbar>
+  <LangToggleButton class="lang" :langButtonOption="langButtonOption" />
   <AppMain></AppMain>
   <Foot class="foot" :footOption="footOption"></Foot>
   <!-- <Introduce class="intro"></Introduce> -->
@@ -14,6 +15,7 @@ const { generateTitle } = useI18n();
 let state = reactive({
   navOption: {} as LayoutType.NavOptionType,
   footOption: {} as LayoutType.FootOptionType,
+  langButtonOption: {} as ComponentType.LangButtonOptionType,
 });
 
 //defined the navoption
@@ -31,7 +33,14 @@ state.footOption.footItems = [
   { name: "网易游戏", link: "www.baidu.com" },
   { name: "网易在线", link: "www.baidu.com" },
 ];
-let { navOption, footOption } = toRefs(state);
+// define the lang btn option
+state.langButtonOption = {
+  LangItems: [
+    { name: "zh", active: false },
+    { name: "en", active: true },
+  ],
+};
+let { navOption, footOption, langButtonOption } = toRefs(state);
 </script>
 
 <style scoped>
@@ -42,5 +51,14 @@ let { navOption, footOption } = toRefs(state);
   background: red;
   right: 0;
   bottom: 0;
+}
+.navbar {
+  z-index: 100;
+}
+.lang {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  z-index: 101;
 }
 </style>

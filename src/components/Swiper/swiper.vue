@@ -8,15 +8,14 @@
       bulletClass: 'my-bullet',
       bulletActiveClass: 'my-bullet-active',
     }"
-    :autoplay="{ delay: 4500 }"
     @swiper="onSwiper"
+    :swiper-option="swiperOption"
   >
+    <!-- :autoplay="{ delay: 4500 }" -->
     <swiper-slide v-for="item in swiperOption.swiperItems" :key="item.name"
-      ><div
-        class="swiperItem"
-        @mouseenter="toggle_autoplay(false)"
-        @mouseleave="toggle_autoplay(true)"
-      >
+      ><div class="swiperItem">
+        <!-- @mouseenter="toggle_autoplay(false)"
+        @mouseleave="toggle_autoplay(true)" -->
         <img :src="item.link" />
         <div class="swiperItemDesc">
           <div class="name">{{ item.name }}</div>
@@ -46,7 +45,10 @@ interface Props {
 let { swiperOption } = withDefaults(defineProps<Props>(), {});
 let modules = [Pagination, Autoplay];
 let autoFlag = true;
-let swiperInstance = {};
+let swiperInstance = {} as any;
+const onSwiper = (swiper: any) => {
+  swiperInstance = swiper;
+};
 let toggle_autoplay = (status: boolean) => {
   if (autoFlag != status) {
     if (autoFlag) {
@@ -57,9 +59,6 @@ let toggle_autoplay = (status: boolean) => {
       autoFlag = true;
     }
   }
-};
-const onSwiper = (swiper: any) => {
-  swiperInstance = swiper;
 };
 </script>
 

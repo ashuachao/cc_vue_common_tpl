@@ -23,7 +23,7 @@
         var wrap = doc.createElement("div");
         wrap.appendChild(remStyle);
         doc.write(wrap.innerHTML);
-        wrap = null;
+        wrap.parentNode?.removeChild(wrap);
     }
     //要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
     refreshRem();

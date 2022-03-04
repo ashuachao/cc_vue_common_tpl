@@ -49,7 +49,7 @@ let { navOption } = withDefaults(defineProps<Props>(), {});
 console.log(useRoute().name);
 
 let activeNav = computed(() => {
-  return useRoute().name;
+  return useRoute().name as string;
 });
 let handleSelect = (index: any) => {
   console.log(index);
@@ -63,7 +63,6 @@ let handleSelect = (index: any) => {
   }
 }
 .menuTplWrapper {
-  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;

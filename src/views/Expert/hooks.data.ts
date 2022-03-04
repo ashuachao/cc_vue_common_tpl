@@ -1,4 +1,9 @@
-import { link } from "fs";
+import api from "@/helpers/api";
+interface cardItemsType {
+    loading: boolean;
+    currentItem: string;
+    cardItems: Array<ComponentType.CardItemForNews>;
+}
 export default () => {
     let swiperOption: ComponentType.swiperOptionType = reactive({
         swiperItems: [
@@ -22,8 +27,10 @@ export default () => {
             },
         ],
     });
-    let caseOption = reactive({
-        caseItems: [] as Array<ComponentType.CardItemForNews>,
+    let cardItemOption: cardItemsType = reactive({
+        loading: false,
+        currentItem: "",
+        cardItems: [],
     });
     let selectOption: ComponentType.SelectOptionType = reactive({
         currentItem: "",
@@ -54,9 +61,40 @@ export default () => {
             },
         ] as Array<ComponentType.SelectItem>,
     });
+    let bannerOption: ComponentType.BannerOptionType = {
+        bgImg: "https://shared.ydstatic.com/ead/dynamic/dynamic-template/image/ow_adimg1/news_banner.png",
+        title: "swiper1",
+        subTitle: "sub_swiper1",
+        method: "参与一",
+    };
+    onMounted(() => {
+        cardItemOption.cardItems = api.getNewsList().map((item) => {
+            Object.assign(item, {
+                mCallback: () => {
+                    location.href = item.link;
+                },
+            });
+            return item;
+        });
+        // hooks, add callback of method
+        swiperOption.swiperItems = swiperOption.swiperItems.map((item) => {
+            Object.assign(item, {
+                mCallback: () => {
+                    console.log(item.name);
+                },
+            });
+            return item;
+        });
+        bannerOption = Object.assign(bannerOption, {
+            mCallback: () => {
+                console.log(bannerOption.title);
+            },
+        });
+    });
     return {
         swiperOption,
-        caseOption,
+        cardItemOption,
         selectOption,
+        bannerOption,
     };
 };

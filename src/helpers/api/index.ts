@@ -4,12 +4,6 @@
  * @Last Modified by: cc123456
  * @Last Modified time: 2022-02-28 20:58:04
  */
-// api.[ContentType].[method](option)
-const enum ContentType {
-    Image, //单图
-    BgImage, //背景图
-    List, //列表内容
-}
 import http from "@/helpers/utils/http";
 import CONSTANT from "@/helpers/constant/constant.baseUrl";
 import routeData from "@/routers/route.setting";
@@ -43,4 +37,43 @@ export default {
                 },
             ];
         }),
+    getNewsList: () => {
+        return [
+            {
+                name: "1",
+                desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
+                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                date: "20220301",
+            },
+            {
+                name: "2",
+                desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
+                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                date: "20220302",
+            },
+            {
+                name: "3",
+                desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
+                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                date: "20220302",
+            },
+            {
+                name: "4",
+                desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
+                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                date: "20220301",
+            },
+            {
+                name: "5",
+                desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
+                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                date: "20220301",
+            },
+        ];
+    },
 };

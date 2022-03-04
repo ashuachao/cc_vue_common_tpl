@@ -19,7 +19,7 @@ declare namespace ComponentType {
         desc: string;
     }
     interface CardItemForNews extends CardCommon {
-        date: string;
+        date?: string;
         method?: string;
         mCallback?: () => void;
     }
@@ -37,5 +37,21 @@ declare namespace ComponentType {
     interface SelectItem {
         value: string;
         label: string;
+    }
+    // banner
+    interface BannerOptionType {
+        bgImg: string;
+        title: string;
+        subTitle?: string;
+        method?: string;
+        mCallback?: () => void;
+    }
+    // lang
+    interface LangItem {
+        name: string;
+        active: boolean;
+    }
+    interface LangButtonOptionType {
+        LangItems: Array<LangItem>;
     }
 }

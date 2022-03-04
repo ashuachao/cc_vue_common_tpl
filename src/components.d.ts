@@ -6,11 +6,18 @@ declare module 'vue' {
   export interface GlobalComponents {
     About: typeof import('./views/About/index.vue')['default']
     AppMain: typeof import('./views/Layout/components/AppMain/AppMain.vue')['default']
-    Card: typeof import("./components/Card/card.vue")["default"];
+    Banner: typeof import('./components/Banner/banner.vue')['default']
+    Card_Com_Expert: typeof import('./views/Expert/components/card_Com_Expert.vue')['default']
     Card_custom: typeof import('./components/Card/card_custom.vue')['default']
+    Card_Expert: typeof import('./views/Expert/components/card_Expert.vue')['default']
     Card_News: typeof import('./components/Card/card_News.vue')['default']
-    CardCustom: typeof import("./components/Card/cardCustom.vue")["default"];
+    Card_News_Effect: typeof import('./views/Expert/components/card_News_Effect.vue')['default']
+    Card_News_Efftct: typeof import('./views/Expert/components/card_News_Efftct.vue')['default']
+    'Card.expert': typeof import('./views/Expert/components/card.expert.vue')['default']
     Chart: typeof import('./components/Chart/chart.vue')['default']
+    CustomService: typeof import('./views/CustomService/index.vue')['default']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
@@ -21,16 +28,18 @@ declare module 'vue' {
     Foot: typeof import('./views/Layout/components/Foot/Foot.vue')['default']
     Home: typeof import('./views/Home/index.vue')['default']
     Introduce: typeof import('./views/Layout/components/Introduce/Introduce.vue')['default']
+    LangToggleButton: typeof import('./components/LangToggle/LangToggleButton.vue')['default']
+    LangToogleButton: typeof import('./components/LangToggle/LangToogleButton.vue')['default']
     Layout: typeof import('./views/Layout/index.vue')['default']
-    'List.classic': typeof import('./components/List/list.classic.vue')['default']
-    'List.virtual': typeof import('./components/List/list.virtual.vue')['default']
     Navbar: typeof import('./views/Layout/components/Navbar/Navbar.vue')['default']
-    Option: typeof import('./components/Select/option.vue')['default']
     Select: typeof import('./components/Select/select.vue')['default']
+    Service: typeof import('./views/Service/index.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/svgIcon.vue')['default']
     Swiper: typeof import('./components/Swiper/swiper.vue')['default']
+    System: typeof import('./views/System/index.vue')['default']
     Table: typeof import('./components/Table/table.vue')['default']
     Tpl: typeof import('./views/Tpl/index.vue')['default']
+    'Tpl的副本': typeof import('./views/Tpl的副本/index.vue')['default']
   }
 }
 
