@@ -1,4 +1,3 @@
-import api from "@/helpers/api";
 export default () => {
     let swiperOption: ComponentType.swiperOptionType = reactive({
         swiperItems: [
@@ -22,7 +21,14 @@ export default () => {
             },
         ],
     });
-    return {
-        swiperOption,
-    };
+    // defineStore
+    const useStore = defineStore("homeStore", {
+        state: () => {
+            return {
+                swiperOption,
+            };
+        },
+        actions: {},
+    });
+    return useStore();
 };

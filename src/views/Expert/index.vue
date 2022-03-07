@@ -1,34 +1,35 @@
 <template>
   <div class="containerWrapper">
-    <Banner :bannerOption="bannerOption" />
+    <Banner :bannerOption="store.bannerOption" />
     <div class="cardWrapper">
       <div class="optionWrapper">
-        <Select :selectOption="selectOption" />
+        <Select :selectOption="store.selectOption" />
       </div>
       <div class="cardItemsWrapper">
-        <Card_News_Effect
-          :cardItemOption="cardItemOption"
-          @loadCards="loadCardsM"
-        />
+        <Card_News_Effect :cardItemOption="store.cardItemOption" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import useData from "./hooks.data";
-let { cardItemOption, selectOption, bannerOption } = useData();
+import useData from "@/store/expert";
+let store = useData();
 // add link rule
 watch(
-  () => selectOption.currentItem,
+  () => store.selectOption.currentItem,
   (val) => {
-    selectOption.currentItem = val;
-    cardItemOption.currentItem = val;
+    store.filterCards(val);
   }
 );
-let loadCardsM = (...args: any[]) => {
-  cardItemOption.loading = true;
-};
+onMounted(() => {
+  store.addCallbackToCard((item) => {
+    location.href = item.link;
+  });
+  store.addCallbackToBanner((item) => {
+    console.log(item);
+  });
+});
 </script>
 
 <style scoped>

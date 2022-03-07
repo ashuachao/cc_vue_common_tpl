@@ -10,7 +10,7 @@
     <el-button
       type="primary"
       :loading="cardItemOption.loading"
-      @click="loadCards"
+      @click="store.getMoreCards"
       >加载更多</el-button
     >
   </div>
@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import prefixCard from "@/helpers/utils/prefixCard";
+import useStore from "@/store/expert";
 interface Props {
   cardItemOption: {
     cardItems: Array<ComponentType.CardItemForNews>;
@@ -25,13 +26,9 @@ interface Props {
     loading: boolean;
   };
 }
-let emit = defineEmits(["loadCards"]);
-let loadCards = () => {
-  emit("loadCards", ...[1, 2, 3]);
-};
 let { cardItemOption } = withDefaults(defineProps<Props>(), {});
+let store = useStore();
 let cardItemsShow = computed(() => {
-  console.log(cardItemOption.currentItem);
   return cardItemOption.currentItem
     ? prefixCard(
         cardItemOption.cardItems.filter(
@@ -50,5 +47,6 @@ let show_more = computed(() => {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 </style>

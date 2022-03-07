@@ -1,13 +1,16 @@
 export default {
     navbar: {
-        Index: "Index",
+        Home: "Home",
         Expert: "Expert",
-        CustomerS: "CustomerService",
-        System: "RuledSystem",
-        About: "AboutUs",
+        CustomerService: "CustomerService",
+        System: "System",
+        AboutUs: "AboutUs",
     },
     lang: {
         CHN: "CHINESE",
         US: "ENGLISH",
+    },
+    AboutUs: {
+        NeedCoop: "needtocooperation",
     },
 };

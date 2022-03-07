@@ -3,7 +3,8 @@ let CONSTANT_DEV = {};
 let CONSTANT_PROD = {};
 let CONSTANT_COMMON = {
     IMG_DATA_URL: "/",
-    LANG: "zh",
+    // options: en | zh | es
+    LANG: "ch",
     NEED_ANIMATION: true,
     LOGO_URL:
         "http://shared.ydstatic.com/ead/dynamic/dynamic-template/image/ow_adimg1/logo.png",

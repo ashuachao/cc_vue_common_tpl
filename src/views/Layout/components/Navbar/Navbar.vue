@@ -7,14 +7,13 @@
       :router="true"
       text-color="#a9aeb8"
       active-text-color="#fc754c"
-      @select="handleSelect"
     >
-      <li class="logoWrapper" @click="handleSelect('index')">
+      <li class="logoWrapper">
         <div class="logo">
           <img :src="navOption.logo" />
         </div>
       </li>
-      <template v-for="item in navOption.navItems" :key="item.label">
+      <template v-for="item in navItems" :key="item.label">
         <el-menu-item
           v-if="!item.children || item.children?.length == 0"
           :index="item.name"
@@ -42,18 +41,19 @@
 </template>
 
 <script setup lang="ts">
+import useI18n from "@/helpers/hooks/useI18n";
 interface Props {
   navOption: LayoutType.NavOptionType;
 }
 let { navOption } = withDefaults(defineProps<Props>(), {});
-console.log(useRoute().name);
-
 let activeNav = computed(() => {
   return useRoute().name as string;
 });
-let handleSelect = (index: any) => {
-  console.log(index);
-};
+let navItems = useI18n({
+  route: "navbar",
+  src: navOption.navItems,
+  property: "name",
+}) as unknown as Array<LayoutType.NavbarItem>;
 </script>
 
 <style scoped>
@@ -76,9 +76,6 @@ let handleSelect = (index: any) => {
   height: 0.6rem;
   margin-right: 0.6rem;
   font-size: 0;
-}
-.logoWrapper:hover {
-  cursor: pointer;
 }
 .logoWrapper .logo img {
   width: 100%;

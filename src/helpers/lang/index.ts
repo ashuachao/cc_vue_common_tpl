@@ -11,7 +11,7 @@ const messages = {
     },
 };
 export default createI18n({
-    fallbackLocale: "ch",
+    fallbackLocale: "zh",
     // inject to global
     globalInjection: true,
     legacy: false,

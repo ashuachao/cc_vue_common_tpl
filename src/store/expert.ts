@@ -30,7 +30,7 @@ export default () => {
     let cardItemOption: cardItemsType = reactive({
         loading: false,
         currentItem: "",
-        cardItems: [],
+        cardItems: api.getNewsList(),
     });
     let selectOption: ComponentType.SelectOptionType = reactive({
         currentItem: "",
@@ -67,34 +67,39 @@ export default () => {
         subTitle: "sub_swiper1",
         method: "参与一",
     };
-    onMounted(() => {
-        cardItemOption.cardItems = api.getNewsList().map((item) => {
-            Object.assign(item, {
-                mCallback: () => {
-                    location.href = item.link;
-                },
-            });
-            return item;
-        });
-        // hooks, add callback of method
-        swiperOption.swiperItems = swiperOption.swiperItems.map((item) => {
-            Object.assign(item, {
-                mCallback: () => {
-                    console.log(item.name);
-                },
-            });
-            return item;
-        });
-        bannerOption = Object.assign(bannerOption, {
-            mCallback: () => {
-                console.log(bannerOption.title);
+    // defineStore
+    const useStore = defineStore("expertStore", {
+        state: () => {
+            return {
+                cardItemOption,
+                selectOption,
+                bannerOption,
+            };
+        },
+        actions: {
+            filterCards(val: string) {
+                this.cardItemOption.currentItem = val;
             },
-        });
+            getMoreCards() {
+                this.cardItemOption.loading = true;
+            },
+            addCallbackToCard(fn: (val: any) => void) {
+                let that = this;
+                this.cardItemOption.cardItems =
+                    this.cardItemOption.cardItems.map((item) => {
+                        Object.assign(item, {
+                            mCallback: fn.bind(that, item),
+                        });
+                        return item;
+                    });
+            },
+            addCallbackToBanner(fn: (val: any) => void) {
+                let that = this;
+                this.bannerOption = Object.assign(this.bannerOption, {
+                    mCallback: fn.bind(that, that.bannerOption),
+                });
+            },
+        },
     });
-    return {
-        swiperOption,
-        cardItemOption,
-        selectOption,
-        bannerOption,
-    };
+    return useStore();
 };

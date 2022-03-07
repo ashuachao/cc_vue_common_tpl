@@ -38,4 +38,13 @@ declare namespace LayoutType {
         name: string;
         link: string;
     }
+    // lang
+    interface LangItem {
+        value: string;
+        label: string;
+    }
+    interface LangOptionType {
+        LangItems: Array<LangItem>;
+        active: string;
+    }
 }

@@ -10,4 +10,7 @@ export default {
         CHN: "中文",
         US: "英文",
     },
+    AboutUs: {
+        NeedCoop: "需要合作",
+    },
 };

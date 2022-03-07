@@ -46,12 +46,14 @@ declare namespace ComponentType {
         method?: string;
         mCallback?: () => void;
     }
-    // lang
-    interface LangItem {
-        name: string;
-        active: boolean;
+    // timeline
+    interface TimelineItem {
+        date: string;
+        title: string;
+        sub_title?: string;
+        svgIcon?: string;
     }
-    interface LangButtonOptionType {
-        LangItems: Array<LangItem>;
+    interface TimelineOptionType {
+        timeLineItems: Array<TimelineItem>;
     }
 }

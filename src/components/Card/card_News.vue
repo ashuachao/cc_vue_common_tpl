@@ -40,8 +40,9 @@ let { cardItem } = withDefaults(defineProps<Props>(), {});
   -ms-transform: translateY(-10px);
   opacity: 0.8;
 }
-.cardTplWrapper .img {
+.cardTplWrapper img {
   height: 2.1rem;
+  width: 100%;
 }
 
 .cardTplWrapper .desc_wrapper {

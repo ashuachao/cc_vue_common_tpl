@@ -24,6 +24,7 @@ let { bannerOption } = withDefaults(defineProps<Props>(), {});
 
 <style scoped>
 .bannerTplWrapper {
+  position: relative;
 }
 .bannerTplWrapper img {
   width: 100%;
@@ -32,7 +33,7 @@ let { bannerOption } = withDefaults(defineProps<Props>(), {});
 .bannerDesc {
   position: absolute;
   left: 2rem;
-  top: 2rem;
+  top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

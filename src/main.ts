@@ -12,5 +12,8 @@ app.use(i18n);
 // router register
 import router from "@/routers";
 app.use(router);
+// pinia register
+const pinia = createPinia();
+app.use(pinia);
 // mount the app
 app.mount("#app");

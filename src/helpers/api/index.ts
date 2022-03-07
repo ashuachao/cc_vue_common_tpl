@@ -2,7 +2,7 @@
  * @Author: cc123456
  * @Date: 2022-02-24 00:01:41
  * @Last Modified by: cc123456
- * @Last Modified time: 2022-02-28 20:58:04
+ * @Last Modified time: 2022-03-07 17:32:55
  */
 import http from "@/helpers/utils/http";
 import CONSTANT from "@/helpers/constant/constant.baseUrl";
@@ -42,36 +42,36 @@ export default {
             {
                 name: "1",
                 desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
-                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
-                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                link: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
+                bgImg: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
                 date: "20220301",
             },
             {
                 name: "2",
                 desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
-                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
-                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                link: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
+                bgImg: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
                 date: "20220302",
             },
             {
                 name: "3",
                 desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
-                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
-                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                link: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
+                bgImg: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
                 date: "20220302",
             },
             {
                 name: "4",
                 desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
-                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
-                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                link: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
+                bgImg: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
                 date: "20220301",
             },
             {
                 name: "5",
                 desc: "白鲸出海在 2018 全球流量大会前夕采访了网易有道运营总监冯庆强，了解网易有道在海外市场的思考和布局。",
-                link: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
-                bgImg: "https://oimageb2.ydstatic.com/image?id=3397853057329434227&product=xue",
+                link: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
+                bgImg: "https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a2540946efd4e7bbc134da9a5b15fc9~tplv-k3u1fbpfcp-watermark.awebp",
                 date: "20220301",
             },
         ];
