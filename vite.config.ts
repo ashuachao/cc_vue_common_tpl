@@ -83,15 +83,20 @@ export default defineConfig({
         open: true,
         https: false,
         proxy: {},
+        cors: true,
     },
     // 生产环境打包配置
     //去除 console debugger
     build: {
+        minify: "terser",
+        // 打包大小超过警告
+        chunkSizeWarningLimit: 500,
         terserOptions: {
             compress: {
                 drop_console: true,
                 drop_debugger: true,
             },
         },
+        cssCodeSplit: false,
     },
 });

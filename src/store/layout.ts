@@ -34,6 +34,50 @@ export default () => {
             { value: "en", label: "English" },
         ],
     });
+    // define the form option
+    let cmsFormOption = {
+        formItems: [
+            {
+                placeholder: "姓名（必填）",
+                name: "name",
+                rules: [
+                    { required: true, message: "请输入姓名", trigger: "blur" },
+                ],
+            },
+            {
+                placeholder: "手机（必填）",
+                name: "tel",
+                rules: [
+                    {
+                        validator: (
+                            rule: any,
+                            value: string,
+                            callback: any
+                        ) => {
+                            if (value === "") {
+                                callback(new Error("请输入手机号码"));
+                            } else if (!/^1[34578]\d{9}$/.test(value)) {
+                                callback(new Error("请输入正确的手机号码"));
+                            } else {
+                                callback();
+                            }
+                        },
+                        trigger: "blur",
+                    },
+                ],
+            },
+            {
+                placeholder: "邮箱",
+                name: "mail",
+            },
+            {
+                placeholder: "推广网站/App名称",
+                name: "refer",
+            },
+        ],
+        tel: "400-6789-163",
+        mail: "service@corp.youdao.com",
+    };
     // defineStore
     const useStore = defineStore("layoutStore", {
         state: () => {
@@ -41,10 +85,14 @@ export default () => {
                 navOption,
                 footOption,
                 langOption,
+                cmsFormOption,
             };
         },
         actions: {
             toggleLocale(locale: string): void {},
+            submitForm(formItems: Array<ComponentType.FormItem>) {
+                console.log(formItems);
+            },
         },
     });
     return useStore();

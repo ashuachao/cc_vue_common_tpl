@@ -2,6 +2,7 @@
   <Navbar class="navbar" :navOption="store.navOption"></Navbar>
   <LangToggle class="lang" :langOption="store.langOption" />
   <AppMain></AppMain>
+  <CmsForm :cmsFormOption="store.cmsFormOption" />
   <Foot class="foot" :footOption="store.footOption"></Foot>
 </template>
 

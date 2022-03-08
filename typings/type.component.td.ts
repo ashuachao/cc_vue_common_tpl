@@ -56,4 +56,16 @@ declare namespace ComponentType {
     interface TimelineOptionType {
         timeLineItems: Array<TimelineItem>;
     }
+    // form
+    // cmsform
+    interface CmsFormOptionType {
+        formItems: Array<FormItem>;
+        tel: string;
+        mail: string;
+    }
+    interface FormItem {
+        placeholder: string;
+        name: string;
+        rules?: Array<any>;
+    }
 }
