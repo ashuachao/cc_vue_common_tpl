@@ -33,7 +33,7 @@
       <div class="description">致电推广顾问，获得免费咨询</div>
       <div class="call">
         <div class="call_icon">
-          <SvgIcon name="phone" color="#567"></SvgIcon>
+          <SvgIcon svgName="phone" color="#567"></SvgIcon>
         </div>
         <div class="call_num">{{ cmsFormOption.tel }}</div>
       </div>

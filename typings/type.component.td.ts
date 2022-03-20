@@ -68,4 +68,27 @@ declare namespace ComponentType {
         name: string;
         rules?: Array<any>;
     }
+    // barrage
+    interface BarrageItem {
+        value: string;
+        color: string;
+        speedLevel: number;
+        size: string;
+        delay: number;
+        createAt: string;
+        id?: string;
+    }
+    interface BarrageOption {
+        barrageItems: Array<BarrageItem>;
+        length: number;
+    }
+    // emotion
+    interface EmotionOption {
+        type: string;
+    }
+    // svg
+    interface SvgOption {
+        svgName: string;
+        color?: string;
+    }
 }

@@ -2,13 +2,20 @@
   <Navbar class="navbar" :navOption="store.navOption"></Navbar>
   <LangToggle class="lang" :langOption="store.langOption" />
   <AppMain></AppMain>
-  <CmsForm :cmsFormOption="store.cmsFormOption" />
+  <CmsForm v-show="itemInList" :cmsFormOption="store.cmsFormOption" />
   <Foot class="foot" :footOption="store.footOption"></Foot>
 </template>
 
 <script setup lang="ts">
 import useStore from "@/store/layout";
 let store = useStore();
+let cmsBlackList = ["CustomerService"];
+let route = useRoute();
+let itemInList = computed(() => {
+  return !(cmsBlackList.indexOf(route.name as string) > -1);
+});
+
+console.log(route.name);
 </script>
 
 <style scoped>

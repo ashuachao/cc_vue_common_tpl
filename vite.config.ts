@@ -7,6 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 // bundle analyzer
 import visualizer from "rollup-plugin-visualizer";
+import styleImport from "vite-plugin-style-import";
 
 //@ts-ignore
 import viteCompression from "vite-plugin-compression";
@@ -30,6 +31,17 @@ export default defineConfig({
             // 第三方组件库的解析器
             resolvers: [ElementPlusResolver()],
             dts: "./src/auto-imports.d.ts",
+        }),
+        styleImport({
+            libs: [
+                {
+                    libraryName: "element-plus",
+                    esModule: true,
+                    resolveStyle: (name) => {
+                        return `element-plus/theme-chalk/${name}.css`;
+                    },
+                },
+            ],
         }),
         Components({
             // dirs 指定组件所在位置，默认为 src/components
@@ -79,15 +91,26 @@ export default defineConfig({
     //启动服务配置
     server: {
         host: "0.0.0.0",
-        port: 8000,
+        port: 9000,
         open: true,
         https: false,
-        proxy: {},
+        proxy: {
+            //配置代理
+            "/api": {
+                target: "http://47.106.135.141:8092", // 所要代理的目标地址
+                rewrite: (path) => path.replace(/^\/api/, ""),
+                changeOrigin: true,
+            },
+        },
         cors: true,
     },
     // 生产环境打包配置
     //去除 console debugger
     build: {
+        outDir: "dist",
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+
         minify: "terser",
         // 打包大小超过警告
         chunkSizeWarningLimit: 500,
@@ -98,5 +121,8 @@ export default defineConfig({
             },
         },
         cssCodeSplit: false,
+        rollupOptions: {
+            input: path.resolve(__dirname, "src/test.ts"),
+        },
     },
 });
